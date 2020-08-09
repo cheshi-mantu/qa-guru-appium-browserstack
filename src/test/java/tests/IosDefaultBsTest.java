@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static helpers.GetTimeStamp.getTimeStamp;
 import static io.qameta.allure.Allure.step;
 
 @Epic("QA.GURU QA automation course")
@@ -35,7 +36,7 @@ class IosDefaultBsTest extends TestBase {
             caps.setCapability("os_version", "13");
             caps.setCapability("project", "cm-mobile-testing-ios");
             caps.setCapability("build", "BS default test for iOS");
-            caps.setCapability("name", "BStack default iOS Java test");
+            caps.setCapability("name", "BStack default iOS Java test " + getTimeStamp());
             caps.setCapability("app", "bs://444bd0308813ae0dc236f8cd461c02d3afa7901d");
         });
 

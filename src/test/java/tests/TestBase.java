@@ -5,7 +5,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 
 import static helpers.Environment.*;
-import static helpers.LoadCredentials.getCredentialsFromJson;
+import static helpers.LoadCredentialsHelper.getCredentialsFromJson;
 
 public class TestBase {
     public static String userName;

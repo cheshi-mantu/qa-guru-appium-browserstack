@@ -21,6 +21,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
+import static helpers.GetTimeStamp.getTimeStamp;
 import static io.qameta.allure.Allure.step;
 
 @Epic("QA.GURU QA automation course")
@@ -39,7 +40,7 @@ class AndroidDefaultBsTest extends TestBase {
             capabilities.setCapability("os_version", "9.0");
             capabilities.setCapability("project", "cm-mobile-testing-android");
             capabilities.setCapability("build", "BS default test for Android");
-            capabilities.setCapability("name", "BStack default Android Java test");
+            capabilities.setCapability("name", "BStack default Android Java test " + getTimeStamp());
             capabilities.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
         });
         AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), capabilities);

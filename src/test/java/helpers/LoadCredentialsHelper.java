@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class LoadCredentials {
+public class LoadCredentialsHelper {
 
     public static byte[] readBytesFromFile(String filePath) {
         File file = new File(filePath);
