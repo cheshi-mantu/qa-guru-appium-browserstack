@@ -21,7 +21,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-import static helpers.GetTimeStamp.getTimeStamp;
+import static helpers.GetTimeStampHelper.getTimeStamp;
 import static io.qameta.allure.Allure.step;
 
 @Epic("QA.GURU QA automation course")
