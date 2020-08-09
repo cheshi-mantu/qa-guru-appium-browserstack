@@ -1,39 +1,32 @@
 package tests;
 
-
-import helpers.AttachmentsHelper;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 
 import static helpers.Environment.*;
 import static helpers.LoadCredentials.getCredentialsFromJson;
 
 public class TestBase {
-    static String weatherKey;
-    static String tlgBot;
-    static String tlgChat;
-
+    public static String userName;
+    public static String accessKey;
     @BeforeAll
-    public static void setUp(){
+    public static void setUp() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
 
-        if (weatherApiKey != null) {
-            weatherKey = weatherApiKey;
+        if (bsUserName != null) {
+            userName = bsUserName;
         } else {
-            weatherKey = getCredentialsFromJson("ApiTests.secret", "weather_api_key");
+            userName = getCredentialsFromJson("browser_stack.secret", "bs_user_name");
         }
 
-        if (tlgBotIdAndSecret != null) {
-            tlgBot = tlgBotIdAndSecret;
+        if (bsAccessKey != null) {
+            accessKey = bsAccessKey;
         } else {
-            tlgBot = getCredentialsFromJson("ApiTests.secret", "tlg_bot");
+            accessKey = getCredentialsFromJson("browser_stack.secret", "bs_access_key");
         }
 
-        if (tlgChatId != null) {
-            tlgChat = tlgChatId;
-        } else {
-            tlgChat = getCredentialsFromJson("ApiTests.secret", "tlg_chat_id");
-        }
-        AttachmentsHelper.attachAsText("Weather key: ", weatherKey);
-        AttachmentsHelper.attachAsText("Weather key: ", tlgBot);
-        AttachmentsHelper.attachAsText("Weather key: ", tlgChat);
     }
+
+
 }
