@@ -25,7 +25,7 @@ import static helpers.GetTimeStampHelper.getTimeStamp;
 import static io.qameta.allure.Allure.step;
 
 @Epic("QA.GURU QA automation course")
-@Feature("Mobile tests - Android")
+@Feature("Mobile tests")
 @Story("Mobile tests - Android - BrowserStack - Appium")
 @Tag("mobile_tests_android")
 class AndroidDefaultBsTest extends TestBase {
